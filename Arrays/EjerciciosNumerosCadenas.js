@@ -313,7 +313,11 @@ function potencia(){
 /*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
 hasta la ingresada por el usuario*/
 function mostrarPotencias(){
-    alert("No sé que es eso");
+    let exponente = parseInt(prompt("Introduce el máximo exponente"));
+
+    for (let i = 0; i <= exponente; i++) {
+        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2,i));
+    }
 }
 
 /*27. Solicite un número y muestre su factorial*/
