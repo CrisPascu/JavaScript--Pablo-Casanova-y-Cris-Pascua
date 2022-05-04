@@ -291,13 +291,35 @@ function numeroEntero(){
 }
 
 /*24. Solicite dos números y calcule su división indicando si ésta es exacta o no*/
+function division(){
+    let dividendo = parseFloat(prompt("Introduce el dividendo"));
+    let divisor = parseFloat(prompt("Introduce el divisor"));
+
+    alert(dividendo/divisor);
+}
+
+/*25. Solicite una base y un exponente y calcule la potencia*/
+function potencia(){
+    let base = parseInt(prompt("Introduce la base"));
+    let exponente = parseInt(prompt("Introduce el exponente"));
+    let resultado = base;
+    while (exponente>1) {
+        resultado = resultado * base;
+        exponente--;
+    }
+    alert(resultado);
+}
+
+/*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
+hasta la ingresada por el usuario*/
+function mostrarPotencias(){
+    alert("No sé que es eso");
+}
+
+/*27. Solicite un número y muestre su factorial*/
 
 
-/*25. Solicite una base y un exponente y calcule la potencia
-26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
-hasta la ingresada por el usuario
-27. Solicite un número y muestre su factorial
-28. Solicite dos números y muestre su coeficiente binomial
+/*28. Solicite dos números y muestre su coeficiente binomial
 29. Calcule el número de puntos que suman las fichas del juego del dominó
 30. Muestre las distintas combinaciones al lanzar dos dados
 31. Solicite un número y muestre el numero de combinaciones que existen para obtener
