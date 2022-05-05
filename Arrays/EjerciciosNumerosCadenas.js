@@ -295,19 +295,17 @@ function division(){
     let dividendo = parseFloat(prompt("Introduce el dividendo"));
     let divisor = parseFloat(prompt("Introduce el divisor"));
 
-    alert(dividendo/divisor);
+    if(dividendo%divisor == 0)
+        alert("Es exacta. Con resultado " + dividendo/divisor);
+    else
+        alert("Es decimal. Con resultado " + dividendo/divisor);
 }
 
 /*25. Solicite una base y un exponente y calcule la potencia*/
 function potencia(){
     let base = parseInt(prompt("Introduce la base"));
     let exponente = parseInt(prompt("Introduce el exponente"));
-    let resultado = base;
-    while (exponente>1) {
-        resultado = resultado * base;
-        exponente--;
-    }
-    alert(resultado);
+    alert(Math.pow(base, exponente));
 }
 
 /*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
@@ -321,12 +319,52 @@ function mostrarPotencias(){
 }
 
 /*27. Solicite un número y muestre su factorial*/
+function factorial() {
+    let num = parseInt(prompt("Introduce un numero"));
+    let result = 1;
+    
+    for (let i = 1; i < num + 1; i++) {
+        
+        result = result * i;
+        
+    }
+    alert(result);
+}
+
+/*28. Solicite dos números y muestre su coeficiente binomial*/
+function binomial() {
+    let num1 = parseInt(prompt("Introduce un numero"));
+    let num2 = parseInt(prompt("Introduce un numero"));
+
+    alert((num1 * (num1 - 1))/num2)
+
+}
+
+/*29. Calcule el número de puntos que suman las fichas del juego del dominó*/
+function numeroPuntos(){
+    let sumatorio=0;
+    for (let i = 0; i < 7; i++) {
+        for (let j = 0; j < i+ 1; j++) {
+            sumatorio=sumatorio+j+i;
+        }
+    }
+    alert(sumatorio);
+}
+
+/*30. Muestre las distintas combinaciones al lanzar dos dados*/
+function dados() {
+//    let combinaciones = Math.pow(6,2);
+    let combinar;
+    for (let i = 1; i < 7; i++) {
+        for (let j = 1; j < 7; j++) {
+            alert(combinar="Combinación " + i + " y " + j);
+        }
+    }
 
 
-/*28. Solicite dos números y muestre su coeficiente binomial
-29. Calcule el número de puntos que suman las fichas del juego del dominó
-30. Muestre las distintas combinaciones al lanzar dos dados
-31. Solicite un número y muestre el numero de combinaciones que existen para obtener
+}
+
+/*31. Solicite un número y muestre el numero de combinaciones que existen para obtener
 ese número lanzando dos dados y sumando sus puntuaciones
 32. Solicite un número en base decimal y lo muestre en binario, octal y hexadecimal
 33. Solicite un número y muestre la parte entera de su raíz cuadrada
