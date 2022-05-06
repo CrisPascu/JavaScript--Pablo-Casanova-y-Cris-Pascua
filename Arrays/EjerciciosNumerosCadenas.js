@@ -525,7 +525,8 @@ function pares(){
     }
 }
 
-/*38. Solicite dos números y muestre su máximo común divisor
+/*
+38. Solicite dos números y muestre su máximo común divisor
 39. Solicite un número y lo descomponga en factores primos
 40. Solicite un número y calcule la suma de sus dígitos
 41. Muestre la tabla de multiplicar
