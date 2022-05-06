@@ -291,23 +291,145 @@ function numeroEntero(){
 }
 
 /*24. Solicite dos números y calcule su división indicando si ésta es exacta o no*/
+function division(){
+    let dividendo = parseFloat(prompt("Introduce el dividendo"));
+    let divisor = parseFloat(prompt("Introduce el divisor"));
 
+    if(dividendo%divisor == 0)
+        alert("Es exacta. Con resultado " + dividendo/divisor);
+    else
+        alert("Es decimal. Con resultado " + dividendo/divisor);
+}
 
-/*25. Solicite una base y un exponente y calcule la potencia
-26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
-hasta la ingresada por el usuario
-27. Solicite un número y muestre su factorial
-28. Solicite dos números y muestre su coeficiente binomial
-29. Calcule el número de puntos que suman las fichas del juego del dominó
-30. Muestre las distintas combinaciones al lanzar dos dados
-31. Solicite un número y muestre el numero de combinaciones que existen para obtener
-ese número lanzando dos dados y sumando sus puntuaciones
-32. Solicite un número en base decimal y lo muestre en binario, octal y hexadecimal
-33. Solicite un número y muestre la parte entera de su raíz cuadrada
-34. Solicite un número y muestre todos sus divisores
-35. Solicite dos números e indique sus divisores comunes
-36. Juegue al Fizz buzz
-37. Solicite un número e indique si es primo o no
+/*25. Solicite una base y un exponente y calcule la potencia*/
+function potencia(){
+    let base = parseInt(prompt("Introduce la base"));
+    let exponente = parseInt(prompt("Introduce el exponente"));
+    alert(Math.pow(base, exponente));
+}
+
+/*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
+hasta la ingresada por el usuario*/
+function mostrarPotencias(){
+    let exponente = parseInt(prompt("Introduce el máximo exponente"));
+
+    for (let i = 0; i <= exponente; i++) {
+        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2,i));
+    }
+}
+
+/*27. Solicite un número y muestre su factorial*/
+function factorial() {
+    let num = parseInt(prompt("Introduce un numero"));
+    let result = 1;
+    
+    for (let i = 1; i < num + 1; i++) {
+        
+        result = result * i;
+        
+    }
+    alert(result);
+}
+
+/*28. Solicite dos números y muestre su coeficiente binomial*/
+function binomial() {
+    let num1 = parseInt(prompt("Introduce un numero"));
+    let num2 = parseInt(prompt("Introduce un numero"));
+
+    alert((num1 * (num1 - 1))/num2)
+
+}
+
+/*29. Calcule el número de puntos que suman las fichas del juego del dominó*/
+function numeroPuntos(){
+    let sumatorio=0;
+    for (let i = 0; i < 7; i++) {
+        for (let j = 0; j < i+ 1; j++) {
+            sumatorio=sumatorio+j+i;
+        }
+    }
+    alert(sumatorio);
+}
+
+/*30. Muestre las distintas combinaciones al lanzar dos dados*/
+function dados() {
+//    let combinaciones = Math.pow(6,2);
+    let combinar;
+    for (let i = 1; i < 7; i++) {
+        for (let j = 1; j < 7; j++) {
+            alert(combinar="Combinación " + i + " y " + j);
+        }
+    }
+}
+
+/*31. Solicite un número y muestre el numero de combinaciones que existen para obtener
+ese número lanzando dos dados y sumando sus puntuaciones*/
+function dadosSuma() {
+    let combinar;
+    for (let i = 1; i < 7; i++) {
+        for (let j = 1; j < 7; j++) {
+            alert(combinar="Combinación " + i + " y " + j + ". La suma es " + (i+j));
+        }
+    }
+}
+
+/*32. Solicite un número en base decimal y lo muestre en binario, octal y hexadecimal*/
+function cambioBase() {
+    let numero = parseInt(prompt("Introduce un numero en base 10"));
+    alert(numero + " en base 2 es " + numero.toString(2));
+    alert(numero + " en base 8 es " + numero.toString(8));
+    alert(numero + " en base 16 es " + numero.toString(16));
+
+}
+
+/*33. Solicite un número y muestre la parte entera de su raíz cuadrada*/
+function raiz() {
+    let numero = parseInt(prompt("Introduce un numero"));
+    alert(parseInt(Math.sqrt(numero,2)));
+}
+
+/*34. Solicite un número y muestre todos sus divisores*/
+function divisores() {
+    let numero = parseInt(prompt("Introduce un numero"));
+    let count = numero;
+    let resultado = "";
+
+    do {
+        count--;
+        
+        if(numero%count==0)
+            resultado += count + ", "; 
+        
+
+    } while (count!=1);
+
+    alert("Los divisores del numero " + numero + " son " + resultado);
+}
+
+/*35. Solicite dos números e indique sus divisores comunes*/
+function divisoresComunes() {
+    let num1 = parseInt(prompt("Introduce un numero"));
+    let num2 = parseInt(prompt("Introduce un numero"));
+
+    let count = 0;
+    let resultado = "";
+
+    count = (num1>=num2) ? num2 : num1;
+
+    do {
+        count--;
+        
+        if(num1%count==0 && num2%count==0)
+            resultado += count + ", "; 
+        
+
+    } while (count!=1);
+
+    alert("Los divisores comunes de los numeros " + num1 + " y " + num2 + " son " + resultado);
+}
+
+/*36. Juegue al Fizz buzz*/
+/*37. Solicite un número e indique si es primo o no
 38. Solicite dos números y muestre su máximo común divisor
 39. Solicite un número y lo descomponga en factores primos
 40. Solicite un número y calcule la suma de sus dígitos
