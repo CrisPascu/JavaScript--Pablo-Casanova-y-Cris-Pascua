@@ -525,15 +525,7 @@ function pares(){
     }
 }
 
-/*31. Solicite un número y muestre el numero de combinaciones que existen para obtener
-ese número lanzando dos dados y sumando sus puntuaciones
-32. Solicite un número en base decimal y lo muestre en binario, octal y hexadecimal
-33. Solicite un número y muestre la parte entera de su raíz cuadrada
-34. Solicite un número y muestre todos sus divisores
-35. Solicite dos números e indique sus divisores comunes
-36. Juegue al Fizz buzz
-37. Solicite un número e indique si es primo o no
-38. Solicite dos números y muestre su máximo común divisor
+/*38. Solicite dos números y muestre su máximo común divisor
 39. Solicite un número y lo descomponga en factores primos
 40. Solicite un número y calcule la suma de sus dígitos
 41. Muestre la tabla de multiplicar
