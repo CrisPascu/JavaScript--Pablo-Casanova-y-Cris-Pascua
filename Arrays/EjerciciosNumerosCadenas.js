@@ -360,6 +360,72 @@ function dados() {
             alert(combinar="Combinación " + i + " y " + j);
         }
     }
+
+    if(dividendo%divisor == 0)
+        alert("Es exacta. Con resultado " + dividendo/divisor);
+    else
+        alert("Es decimal. Con resultado " + dividendo/divisor);
+}
+
+/*25. Solicite una base y un exponente y calcule la potencia*/
+function potencia(){
+    let base = parseInt(prompt("Introduce la base"));
+    let exponente = parseInt(prompt("Introduce el exponente"));
+    alert(Math.pow(base, exponente));
+}
+
+/*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
+hasta la ingresada por el usuario*/
+function mostrarPotencias(){
+    let exponente = parseInt(prompt("Introduce el máximo exponente"));
+
+    for (let i = 0; i <= exponente; i++) {
+        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2,i));
+    }
+}
+
+/*27. Solicite un número y muestre su factorial*/
+function factorial() {
+    let num = parseInt(prompt("Introduce un numero"));
+    let result = 1;
+    
+    for (let i = 1; i < num + 1; i++) {
+        
+        result = result * i;
+        
+    }
+    alert(result);
+}
+
+/*28. Solicite dos números y muestre su coeficiente binomial*/
+function binomial() {
+    let num1 = parseInt(prompt("Introduce un numero"));
+    let num2 = parseInt(prompt("Introduce un numero"));
+
+    alert((num1 * (num1 - 1))/num2)
+
+}
+
+/*29. Calcule el número de puntos que suman las fichas del juego del dominó*/
+function numeroPuntos(){
+    let sumatorio=0;
+    for (let i = 0; i < 7; i++) {
+        for (let j = 0; j < i+ 1; j++) {
+            sumatorio=sumatorio+j+i;
+        }
+    }
+    alert(sumatorio);
+}
+
+/*30. Muestre las distintas combinaciones al lanzar dos dados*/
+function dados() {
+//    let combinaciones = Math.pow(6,2);
+    let combinar;
+    for (let i = 1; i < 7; i++) {
+        for (let j = 1; j < 7; j++) {
+            alert(combinar="Combinación " + i + " y " + j);
+        }
+    }
 }
 
 /*31. Solicite un número y muestre el numero de combinaciones que existen para obtener
@@ -430,6 +496,16 @@ function divisoresComunes() {
 
 /*36. Juegue al Fizz buzz*/
 /*37. Solicite un número e indique si es primo o no
+}
+
+/*31. Solicite un número y muestre el numero de combinaciones que existen para obtener
+ese número lanzando dos dados y sumando sus puntuaciones
+32. Solicite un número en base decimal y lo muestre en binario, octal y hexadecimal
+33. Solicite un número y muestre la parte entera de su raíz cuadrada
+34. Solicite un número y muestre todos sus divisores
+35. Solicite dos números e indique sus divisores comunes
+36. Juegue al Fizz buzz
+37. Solicite un número e indique si es primo o no
 38. Solicite dos números y muestre su máximo común divisor
 39. Solicite un número y lo descomponga en factores primos
 40. Solicite un número y calcule la suma de sus dígitos
