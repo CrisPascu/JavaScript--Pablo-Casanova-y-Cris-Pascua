@@ -494,8 +494,35 @@ function divisoresComunes() {
     alert("Los divisores comunes de los numeros " + num1 + " y " + num2 + " son " + resultado);
 }
 
-/*36. Juegue al Fizz buzz*/
-/*37. Solicite un número e indique si es primo o no
+/*36. Juegue al Fizz buzz:
+Necesita escribir un programa que imprima los números del 1 al 100 para que:
+-Si el número es múltiplo de 3, debe escribir «Fizz» en lugar de ese número.
+-Si el número es múltiplo de 5, debe escribir «Buzz» en lugar de ese número.
+-Si el número es un múltiplo de 3 y 5, debe imprimir «FizzBuzz» en lugar de ese número.
+Intente pensar en una solución para resolver este desafío con la ayuda de bucles y declaraciones condicionales antes de pasar a la solución.*/
+function fizzBuzz(){
+    for (let i = 0; i <= 100; i++) {
+        if (i%3 == 0 && i%5 == 0) {
+            alert("FizBuzz");
+        } else if (i%3 == 0){
+            alert("Fizz");
+        } else if (i%5 == 0){
+            alert("Buzz");
+        } else{
+            alert(i);
+        }
+        
+    }
+}
+
+/*37. Solicite un número e indique si es primo o no*/
+function pares(){
+    let numero=parseInt(prompt("Introduce un número"));
+    if (numero%2==0){
+        alert(numero+" es un número par");
+    } else {
+        alert(numero+" no es un número par")
+    }
 }
 
 /*31. Solicite un número y muestre el numero de combinaciones que existen para obtener
