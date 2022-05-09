@@ -1,12 +1,12 @@
 //Booleanos
 /*1. Solicite un dato, analice si se trata de un valor booleano, numérico o cadena de caracteres muestre su valor de verdad*/
-function buleanoUno(){
-    let dato=prompt("Introduce un dato");
+function buleanoUno() {
+    let dato = prompt("Introduce un dato");
     if (dato == "true" || dato == "false") {
         alert("Es buleano");
-    }else if (dato < 0 || dato >= 0) {
+    } else if (dato < 0 || dato >= 0) {
         alert("Es numérico");
-    }else{
+    } else {
         alert("Es cadena");
     }
 }
@@ -16,35 +16,35 @@ function buleanoUno(){
 
 //Números
 /*1. Solicite dos números y muestre su suma*/
-function suma(){
-    let numero1=parseInt(prompt("Introduce el primer numero"));
-    let numero2=parseInt(prompt("Introduce el segundo numero"));
-    alert(numero1+numero2);
+function suma() {
+    let numero1 = parseInt(prompt("Introduce el primer numero"));
+    let numero2 = parseInt(prompt("Introduce el segundo numero"));
+    alert(numero1 + numero2);
 }
 
 /*2. Solicite dos números y muestre el mayor de ellos*/
-function mayor(){
-    let numero1=parseInt(prompt("Introduce el primer numero"));
-    let numero2=parseInt(prompt("Introduce el segundo numero"));
-    if (numero1>numero2) {
+function mayor() {
+    let numero1 = parseInt(prompt("Introduce el primer numero"));
+    let numero2 = parseInt(prompt("Introduce el segundo numero"));
+    if (numero1 > numero2) {
         alert(numero1);
-    }else if (numero2>numero1){
+    } else if (numero2 > numero1) {
         alert(numero2);
-    }else {
+    } else {
         alert("Son iguales");
     }
 }
 
 /*3. Solicite un número y lo divida por 2, por 4 y por 8*/
-function dividir(){
-    let dato=parseInt(prompt("Introduce un numero"));
-    alert(dato/2 + " "+ dato/4 + " "+ dato/8);
+function dividir() {
+    let dato = parseInt(prompt("Introduce un numero"));
+    alert(dato / 2 + " " + dato / 4 + " " + dato / 8);
 }
 
 /*4. Solicite un número e indique si es par o impar*/
-function parImpar(){
-    let dato=parseInt(prompt("Introduce un numero"));
-    if (dato%2==0) {
+function parImpar() {
+    let dato = parseInt(prompt("Introduce un numero"));
+    if (dato % 2 == 0) {
         alert("Par");
     } else {
         alert("Impar");
@@ -52,8 +52,8 @@ function parImpar(){
 }
 
 /*5. Solicite un número y muestre una cuenta atrás*/
-function cuentaAtras(){
-    let dato=parseInt(prompt("Introduce un numero"));
+function cuentaAtras() {
+    let dato = parseInt(prompt("Introduce un numero"));
     for (let i = dato; i > -1; i--) {
         alert(i);
     }
@@ -61,15 +61,15 @@ function cuentaAtras(){
 
 /*6. Solicite tres números y muestre el menor de ellos. Realizar el mismo ejercicio para n
 números y mostrar el mayor.*/
-function numMenor(){
-    let dato1=parseInt(prompt("Introduce el primer valor"));
-    let dato2=parseInt(prompt("Introduce el segundo valor"));
-    let dato3=parseInt(prompt("Introduce el tercer valor"));
+function numMenor() {
+    let dato1 = parseInt(prompt("Introduce el primer valor"));
+    let dato2 = parseInt(prompt("Introduce el segundo valor"));
+    let dato3 = parseInt(prompt("Introduce el tercer valor"));
 
-    if (dato1>dato2 && dato1>dato3) {
+    if (dato1 > dato2 && dato1 > dato3) {
         alert(dato1);
     }
-    else if (dato2>dato1 && dato2>dato3){
+    else if (dato2 > dato1 && dato2 > dato3) {
         alert(dato2);
     }
     else {
@@ -78,18 +78,18 @@ function numMenor(){
 }
 
 /*7. Solicite tres números y muestre el central, si no hay uno central, debe advertirlo*/
-function numeroIntermedio(){
-    let datos1=parseInt(prompt("Introduce el primer valor"));
-    let datos2=parseInt(prompt("Introduce el segundo valor"));
-    let datos3=parseInt(prompt("Introduce el tercer valor"));
+function numeroIntermedio() {
+    let datos1 = parseInt(prompt("Introduce el primer valor"));
+    let datos2 = parseInt(prompt("Introduce el segundo valor"));
+    let datos3 = parseInt(prompt("Introduce el tercer valor"));
 
-    if (datos2>datos3 && datos2<datos1 || datos2>datos1 && datos2<datos3) {
+    if (datos2 > datos3 && datos2 < datos1 || datos2 > datos1 && datos2 < datos3) {
         alert(datos2);
     }
-    else if (datos1>datos3 && datos1<datos2 || datos1>datos2 && datos1<datos3){
+    else if (datos1 > datos3 && datos1 < datos2 || datos1 > datos2 && datos1 < datos3) {
         alert(datos1);
     }
-    else if (datos3>datos2 && datos3<datos1 || datos3>datos1 && datos3<datos2){
+    else if (datos3 > datos2 && datos3 < datos1 || datos3 > datos1 && datos3 < datos2) {
         alert(datos3);
     }
     else {
@@ -97,93 +97,93 @@ function numeroIntermedio(){
     }
 }
 
-/*8. Solicite cuatro números y los muestre en orden*/ 
-function ordenarNumeros(){
-    let numeros=[];
+/*8. Solicite cuatro números y los muestre en orden*/
+function ordenarNumeros() {
+    let numeros = [];
     for (let o = 0; o < 4; o++) {
-        numeros[o]=parseInt(prompt("Introduce el " + o +" valor"));
+        numeros[o] = parseInt(prompt("Introduce el " + o + " valor"));
     }
 
     alert(numeros.sort);
 }
 
 /*9. Solicite números al usuario y calcule la media aritmética de todos ellos. Para terminar de introducir números, el usuario introducirá un número negativo. Realizar el mismo ejercicio para las medias armónica, cuadrática y geométrica*/
-function media(){
-    let num=0;
-    let contador=0;
-    let media=0;
-    while (num>=0) { 
-        num=parseInt(prompt("Introduce un número"));
-        if (num>=0){
-            media=media+num;
-            contador++; 
+function media() {
+    let num = 0;
+    let contador = 0;
+    let media = 0;
+    while (num >= 0) {
+        num = parseInt(prompt("Introduce un número"));
+        if (num >= 0) {
+            media = media + num;
+            contador++;
         }
     }
-    media=media/contador;
+    media = media / contador;
     alert(media);
 }
 
 /*10. Solicite números enteros al usuario. Para terminar de introducir números, el usuario
 introducirá el cero. A continuación se mostrará un sencillo histograma: El número de
 positivos y el número de negativos usando asteriscos (uno para cada ocurrencia)*/
-function histograma(){
+function histograma() {
     let num;
-    let contador="";
-    let media="";
-   do { 
-        num=parseInt(prompt("Introduce un número"));
-        if (num<0){
-            contador=contador+"*"; 
+    let contador = "";
+    let media = "";
+    do {
+        num = parseInt(prompt("Introduce un número"));
+        if (num < 0) {
+            contador = contador + "*";
         }
         else {
-            media=media+"*";
+            media = media + "*";
         }
-    } while (num!=0);
-    alert("Numeros positivos: "+ media +"\n Numeros negativos: " + contador);
+    } while (num != 0);
+    alert("Numeros positivos: " + media + "\n Numeros negativos: " + contador);
 }
 
 /*11. Solicite la estatura y el peso del usuario y, basándose en el cálculo de su IMC le
 informe de su estado nutricional*/
-function imc(){
-    let estatura=parseFloat(prompt("Introduce tu altura"));
-    let peso=parseFloat(prompt("Introduce tu peso"));
-    if((peso/(estatura*estatura)) < 18.5)
+function imc() {
+    let estatura = parseFloat(prompt("Introduce tu altura"));
+    let peso = parseFloat(prompt("Introduce tu peso"));
+    if ((peso / (estatura * estatura)) < 18.5)
         alert("Bajo peso");
-    else if ((peso/(estatura*estatura)) < 25 && (peso/(estatura*estatura)) >= 18.5) {
-        alert("Peso normal"); 
-    }else if ((peso/(estatura*estatura)) < 29.9 && (peso/(estatura*estatura)) >= 25) {
-        alert("Sobrepeso"); 
-    }else{
-        alert("Obesidad"); 
+    else if ((peso / (estatura * estatura)) < 25 && (peso / (estatura * estatura)) >= 18.5) {
+        alert("Peso normal");
+    } else if ((peso / (estatura * estatura)) < 29.9 && (peso / (estatura * estatura)) >= 25) {
+        alert("Sobrepeso");
+    } else {
+        alert("Obesidad");
     }
 }
 
 /*12. Solicite un número al usuario y muestre la suma de todos los números naturales
 desde el 1 hasta el número introducido*/
-function sumaTotal(){
-    let num=parseInt(prompt("Introduce un número"));
-    let sumar=0;
+function sumaTotal() {
+    let num = parseInt(prompt("Introduce un número"));
+    let sumar = 0;
     for (let i = num; i > 0; i--) {
-        sumar=sumar+i;
+        sumar = sumar + i;
     }
     alert(sumar);
 }
 
 /*13. Solicite dos números al usuario y muestre la suma de todos los números naturales
 entre ellos incluyendo ambos*/
-function sumaEntreNumeros(){
-    let num1=parseInt(prompt("Introduce un número"));
-    let num2=parseInt(prompt("Introduce otro número"));
-    let sumar=0;
-    if(num1>num2){
+function sumaEntreNumeros() {
+    let num1 = parseInt(prompt("Introduce un número"));
+    let num2 = parseInt(prompt("Introduce otro número"));
+    let sumar = 0;
+    if (num1 > num2) {
         for (let i = num1; i >= num2; i--) {
-            sumar=sumar+i;
+            sumar = sumar + i;
         }
         alert(sumar);
     }
-    else{
+    else {
         for (let i = num1; i <= num2; i++) {
-            sumar=sumar+i;
+            sumar = sumar + i;
         }
         alert(sumar);
     }
@@ -191,63 +191,63 @@ function sumaEntreNumeros(){
 
 /*14. Solicite una hora del día al usuario entre las 0 y las 11 y un número de horas. Se
 mostrará que hora indicará el reloj pasadas ese número de horas*/
-function horas(){
-    let num=parseInt(prompt("Introduce la hora"));
-    let intervalo=parseInt(prompt("Introduce cuántas horas han pasado"));
+function horas() {
+    let num = parseInt(prompt("Introduce la hora"));
+    let intervalo = parseInt(prompt("Introduce cuántas horas han pasado"));
 
-    num=num+intervalo;
-    while(num>24){
-        num-=24;
+    num = num + intervalo;
+    while (num > 24) {
+        num -= 24;
     }
     alert(num);
 }
 
 /*15. Solicite un número al usuario y muestre todos sus múltiplos del 0 al 100*/
-function multiplos(){
-    let num=parseInt(prompt("Introduce un número"));
+function multiplos() {
+    let num = parseInt(prompt("Introduce un número"));
     for (let i = 0; i < 101; i++) {
-        alert(num*i);
+        alert(num * i);
     }
 
 }
 
 /*16. Solicite un número y muestre el número de dígitos que lo forman*/
-function numeroDigitos(){
-    let num=prompt("Introduce un número");
+function numeroDigitos() {
+    let num = prompt("Introduce un número");
     alert(num.length);
 
 }
 
 /*17. Solicite un número y muestre sus dígitos invertidos*/
-function digitosInvertidos(){
-    let num=prompt("Introduce un número");
-    let aux="";
+function digitosInvertidos() {
+    let num = prompt("Introduce un número");
+    let aux = "";
     for (let i = num.length; i > 0; i--) {
-        aux=aux+num.substring(i,i-1);
+        aux = aux + num.substring(i, i - 1);
     }
     alert(aux);
 }
 
 /*18. Solicite un importe e indique el importe con IVA*/
-function conIVA(){
-    let num=parseFloat(prompt("Introduce el importe"));
-    alert("El precio con IVA es "+ (num+num*0.21));
+function conIVA() {
+    let num = parseFloat(prompt("Introduce el importe"));
+    alert("El precio con IVA es " + (num + num * 0.21));
 }
 
 /*19. Solicite un importe con IVA y lo indique sin IVA*/
-function sinIVA(){
-    let num=parseFloat(prompt("Introduce el importe con iva"));
-    alert("El precio sin IVA es "+ (num-num*0.21));
+function sinIVA() {
+    let num = parseFloat(prompt("Introduce el importe con iva"));
+    alert("El precio sin IVA es " + (num - num * 0.21));
 }
 
 
 /*20. Solicite un año e indique si es bisiesto o no*/
-function bisiesto(){
+function bisiesto() {
     let anio = prompt("Introduce un año");
-    if (((anio % 4 == 0) && (anio % 100 != 0 )) || (anio % 400 == 0)){
-        alert( anio + " es bisiesto");
+    if (((anio % 4 == 0) && (anio % 100 != 0)) || (anio % 400 == 0)) {
+        alert(anio + " es bisiesto");
     }
-    else{
+    else {
         alert(anio + " no es bisiesto")
     }
 }
@@ -263,7 +263,7 @@ function viaje() {
 
         mins = parseInt(prompt("Introduce minutos"));
         total += mins;
-        
+
     } while (mins != 0);
 
     while (total > 60) {
@@ -275,34 +275,34 @@ function viaje() {
 }
 
 /*22. Solicite un número y muestre su parte decimal*/
-function numeroDecimal(){
-    let numDecimal=prompt("Introduce un número decimal");
-    
-    alert(numDecimal.substring(numDecimal.indexOf(".")+1,numDecimal.length));
-    
+function numeroDecimal() {
+    let numDecimal = prompt("Introduce un número decimal");
+
+    alert(numDecimal.substring(numDecimal.indexOf(".") + 1, numDecimal.length));
+
 }
 
 /*23. Solicite un número y muestre su parte entera*/
-function numeroEntero(){
-    let numEntero=prompt("Introduce un número decimal");
-    
-    alert(numEntero.substring(0,numEntero.indexOf(".")));
-    
+function numeroEntero() {
+    let numEntero = prompt("Introduce un número decimal");
+
+    alert(numEntero.substring(0, numEntero.indexOf(".")));
+
 }
 
 /*24. Solicite dos números y calcule su división indicando si ésta es exacta o no*/
-function division(){
+function division() {
     let dividendo = parseFloat(prompt("Introduce el dividendo"));
     let divisor = parseFloat(prompt("Introduce el divisor"));
 
-    if(dividendo%divisor == 0)
-        alert("Es exacta. Con resultado " + dividendo/divisor);
+    if (dividendo % divisor == 0)
+        alert("Es exacta. Con resultado " + dividendo / divisor);
     else
-        alert("Es decimal. Con resultado " + dividendo/divisor);
+        alert("Es decimal. Con resultado " + dividendo / divisor);
 }
 
 /*25. Solicite una base y un exponente y calcule la potencia*/
-function potencia(){
+function potencia() {
     let base = parseInt(prompt("Introduce la base"));
     let exponente = parseInt(prompt("Introduce el exponente"));
     alert(Math.pow(base, exponente));
@@ -310,11 +310,11 @@ function potencia(){
 
 /*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
 hasta la ingresada por el usuario*/
-function mostrarPotencias(){
+function mostrarPotencias() {
     let exponente = parseInt(prompt("Introduce el máximo exponente"));
 
     for (let i = 0; i <= exponente; i++) {
-        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2,i));
+        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2, i));
     }
 }
 
@@ -322,11 +322,11 @@ function mostrarPotencias(){
 function factorial() {
     let num = parseInt(prompt("Introduce un numero"));
     let result = 1;
-    
+
     for (let i = 1; i < num + 1; i++) {
-        
+
         result = result * i;
-        
+
     }
     alert(result);
 }
@@ -336,16 +336,16 @@ function binomial() {
     let num1 = parseInt(prompt("Introduce un numero"));
     let num2 = parseInt(prompt("Introduce un numero"));
 
-    alert((num1 * (num1 - 1))/num2)
+    alert((num1 * (num1 - 1)) / num2)
 
 }
 
 /*29. Calcule el número de puntos que suman las fichas del juego del dominó*/
-function numeroPuntos(){
-    let sumatorio=0;
+function numeroPuntos() {
+    let sumatorio = 0;
     for (let i = 0; i < 7; i++) {
-        for (let j = 0; j < i+ 1; j++) {
-            sumatorio=sumatorio+j+i;
+        for (let j = 0; j < i + 1; j++) {
+            sumatorio = sumatorio + j + i;
         }
     }
     alert(sumatorio);
@@ -353,22 +353,22 @@ function numeroPuntos(){
 
 /*30. Muestre las distintas combinaciones al lanzar dos dados*/
 function dados() {
-//    let combinaciones = Math.pow(6,2);
+    //    let combinaciones = Math.pow(6,2);
     let combinar;
     for (let i = 1; i < 7; i++) {
         for (let j = 1; j < 7; j++) {
-            alert(combinar="Combinación " + i + " y " + j);
+            alert(combinar = "Combinación " + i + " y " + j);
         }
     }
 
-    if(dividendo%divisor == 0)
-        alert("Es exacta. Con resultado " + dividendo/divisor);
+    if (dividendo % divisor == 0)
+        alert("Es exacta. Con resultado " + dividendo / divisor);
     else
-        alert("Es decimal. Con resultado " + dividendo/divisor);
+        alert("Es decimal. Con resultado " + dividendo / divisor);
 }
 
 /*25. Solicite una base y un exponente y calcule la potencia*/
-function potencia(){
+function potencia() {
     let base = parseInt(prompt("Introduce la base"));
     let exponente = parseInt(prompt("Introduce el exponente"));
     alert(Math.pow(base, exponente));
@@ -376,11 +376,11 @@ function potencia(){
 
 /*26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima
 hasta la ingresada por el usuario*/
-function mostrarPotencias(){
+function mostrarPotencias() {
     let exponente = parseInt(prompt("Introduce el máximo exponente"));
 
     for (let i = 0; i <= exponente; i++) {
-        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2,i));
+        alert("La potencia de 2 elevado a " + i + " es " + Math.pow(2, i));
     }
 }
 
@@ -388,11 +388,11 @@ function mostrarPotencias(){
 function factorial() {
     let num = parseInt(prompt("Introduce un numero"));
     let result = 1;
-    
+
     for (let i = 1; i < num + 1; i++) {
-        
+
         result = result * i;
-        
+
     }
     alert(result);
 }
@@ -402,16 +402,16 @@ function binomial() {
     let num1 = parseInt(prompt("Introduce un numero"));
     let num2 = parseInt(prompt("Introduce un numero"));
 
-    alert((num1 * (num1 - 1))/num2)
+    alert((num1 * (num1 - 1)) / num2)
 
 }
 
 /*29. Calcule el número de puntos que suman las fichas del juego del dominó*/
-function numeroPuntos(){
-    let sumatorio=0;
+function numeroPuntos() {
+    let sumatorio = 0;
     for (let i = 0; i < 7; i++) {
-        for (let j = 0; j < i+ 1; j++) {
-            sumatorio=sumatorio+j+i;
+        for (let j = 0; j < i + 1; j++) {
+            sumatorio = sumatorio + j + i;
         }
     }
     alert(sumatorio);
@@ -419,11 +419,11 @@ function numeroPuntos(){
 
 /*30. Muestre las distintas combinaciones al lanzar dos dados*/
 function dados() {
-//    let combinaciones = Math.pow(6,2);
+    //    let combinaciones = Math.pow(6,2);
     let combinar;
     for (let i = 1; i < 7; i++) {
         for (let j = 1; j < 7; j++) {
-            alert(combinar="Combinación " + i + " y " + j);
+            alert(combinar = "Combinación " + i + " y " + j);
         }
     }
 }
@@ -434,7 +434,7 @@ function dadosSuma() {
     let combinar;
     for (let i = 1; i < 7; i++) {
         for (let j = 1; j < 7; j++) {
-            alert(combinar="Combinación " + i + " y " + j + ". La suma es " + (i+j));
+            alert(combinar = "Combinación " + i + " y " + j + ". La suma es " + (i + j));
         }
     }
 }
@@ -451,7 +451,7 @@ function cambioBase() {
 /*33. Solicite un número y muestre la parte entera de su raíz cuadrada*/
 function raiz() {
     let numero = parseInt(prompt("Introduce un numero"));
-    alert(parseInt(Math.sqrt(numero,2)));
+    alert(parseInt(Math.sqrt(numero, 2)));
 }
 
 /*34. Solicite un número y muestre todos sus divisores*/
@@ -462,12 +462,12 @@ function divisores() {
 
     do {
         count--;
-        
-        if(numero%count==0)
-            resultado += count + ", "; 
-        
 
-    } while (count!=1);
+        if (numero % count == 0)
+            resultado += count + ", ";
+
+
+    } while (count != 1);
 
     alert("Los divisores del numero " + numero + " son " + resultado);
 }
@@ -480,16 +480,16 @@ function divisoresComunes() {
     let count = 0;
     let resultado = "";
 
-    count = (num1>=num2) ? num2 : num1;
+    count = (num1 >= num2) ? num2 : num1;
 
     do {
         count--;
-        
-        if(num1%count==0 && num2%count==0)
-            resultado += count + ", "; 
-        
 
-    } while (count!=1);
+        if (num1 % count == 0 && num2 % count == 0)
+            resultado += count + ", ";
+
+
+    } while (count != 1);
 
     alert("Los divisores comunes de los numeros " + num1 + " y " + num2 + " son " + resultado);
 }
@@ -500,59 +500,302 @@ Necesita escribir un programa que imprima los números del 1 al 100 para que:
 -Si el número es múltiplo de 5, debe escribir «Buzz» en lugar de ese número.
 -Si el número es un múltiplo de 3 y 5, debe imprimir «FizzBuzz» en lugar de ese número.
 Intente pensar en una solución para resolver este desafío con la ayuda de bucles y declaraciones condicionales antes de pasar a la solución.*/
-function fizzBuzz(){
+function fizzBuzz() {
     for (let i = 0; i <= 100; i++) {
-        if (i%3 == 0 && i%5 == 0) {
+        if (i % 3 == 0 && i % 5 == 0) {
             alert("FizBuzz");
-        } else if (i%3 == 0){
+        } else if (i % 3 == 0) {
             alert("Fizz");
-        } else if (i%5 == 0){
+        } else if (i % 5 == 0) {
             alert("Buzz");
-        } else{
+        } else {
             alert(i);
         }
-        
+
     }
 }
 
 /*37. Solicite un número e indique si es primo o no*/
-function pares(){
-    let numero=parseInt(prompt("Introduce un número"));
-    if (numero%2==0){
-        alert(numero+" es un número par");
-    } else {
-        alert(numero+" no es un número par")
+function primo() {
+    let numero = parseInt(prompt("Introduce un número"));
+    let primos = true;
+    for (let i = 2; i < numero; i++) {
+        if (numero % i == 0) {
+            primos = false;
+        }
+    }
+    if (primos)
+        alert(numero + " es un número primo");
+    else
+        alert(numero + " no es un número primo");
+}
+
+/*38. Solicite dos números y muestre su máximo común divisor*/
+function mcd() {
+    let num1 = parseInt(prompt("Introduce un numero"));
+    let num2 = parseInt(prompt("Introduce un numero"));
+
+    let count = 0;
+    let resultado = 0;
+
+    count = (num1 >= num2) ? num2 : num1;
+
+    do {
+        if (num1 % count == 0 && num2 % count == 0) {
+            if (resultado < count)
+                resultado = count;
+        }
+        count--;
+    } while (count != 1);
+
+    if (resultado > 1)
+        alert("El MCD entre " + num1 + " y " + num2 + " es " + resultado);
+    else
+        alert("No tienen MCD")
+}
+
+/*39. Solicite un número y lo descomponga en factores primos*/
+function descomponerPrimos() {
+    let numero = parseInt(prompt("Introduce un número"));
+    let count = 1;
+    let primos = true;
+    let descompuesto = [];
+
+    do { //MAL
+
+        for (let i = 1; i < count; i++) {
+            for (let j = 2; j < numero; j++) {
+                if (numero % j == 0) {
+                    primos = false;
+                }
+            }
+
+            if (primos && numero % i == 0) {
+                numero = numero / i;
+                descompuesto[count - 1] = i;
+            }
+        }
+        count++;
+    } while (numero < count);
+
+    alert(descompuesto)
+}
+
+/*40. Solicite un número y calcule la suma de sus dígitos*/
+function sumaDigitos() {
+    let numero = parseInt(prompt("Introduce un número"));
+    let suma = 0;
+
+    do {
+
+        suma = parseInt(suma + (numero % 10));
+        numero = numero / 10;
+
+    } while (numero > 0);
+
+    alert(suma);
+}
+
+/*41. Muestre la tabla de multiplicar*/
+function tablaMultiplicar() {
+    let numero = parseInt(prompt("Introduce un número"));
+    for (let o = 0; o < 11; o++) {
+        alert(numero + "x" + o + "=" + (numero * o) + "\n");
     }
 }
 
-/*
-38. Solicite dos números y muestre su máximo común divisor
-39. Solicite un número y lo descomponga en factores primos
-40. Solicite un número y calcule la suma de sus dígitos
-41. Muestre la tabla de multiplicar
-42. Implemente una sencilla calculadora, en la que se solicite el primer operando, un
-operador aritmético y el segundo operando para mostrar a continuación el resultado
-43. Solicite números entre 0 y 998 hasta que el usuario introduzca el 999, en ese
-momento muestra la suma de todos ellos (menos el 999)
-44. Solicite un número de segundos y muestre este dato en horas, minutos y segundos
-45. Solicite tres números al usuario e indique si forman los lados de un triángulo y en
-caso afirmativo qué tipo de triángulo
-46. Solicite números al usuario y muestre cuantos números mayores que cero se han
-introducido y la suma de todos ellos. Para terminar, el usuario introducirá el cero
-47. Calcule el número de años que deben transcurrir para que la suma de las edades de
+/*42. Implemente una sencilla calculadora, en la que se solicite el primer operando, un
+operador aritmético y el segundo operando para mostrar a continuación el resultado*/
+function calculadora() {
+    let numero1 = parseInt(prompt("Introduce un número"));
+    let operador = prompt("Introduce un operador");
+    let numero2 = parseInt(prompt("Introduce un número"));
+
+    switch (operador) {
+        case "+":
+            alert(numero1 + numero2);
+            break;
+        case "-":
+            alert(numero1 - numero2);
+            break;
+        case "*":
+            alert(numero1 * numero2);
+            break;
+        case "/":
+            alert(numero1 / numero2);
+            break;
+        default:
+            alert("No vale ese operador");
+            break;
+    }
+}
+
+/*43. Solicite números entre 0 y 998 hasta que el usuario introduzca el 999, en ese
+momento muestra la suma de todos ellos (menos el 999)*/
+function sumarAloLoco() {
+    let numero = 0;
+    let suma = 0;
+    do {
+        numero = parseInt(prompt("Introduce un número"));
+        suma = suma + numero;
+    } while (numero != 999);
+
+    alert(suma - 999);
+}
+
+/*44. Solicite un número de segundos y muestre este dato en horas, minutos y segundos*/
+function pasoHoras() {
+    let segundos = parseInt(prompt("Introduce el tiempo en segundos"));
+    let horas = 0;
+    let minutos = 0;
+
+    while (segundos > 3600) {
+        horas++;
+        segundos -= 3600;
+    }
+    while (segundos > 60) {
+        minutos++;
+        segundos -= 60;
+    }
+    alert(horas + ":" + minutos + ":" + segundos);
+}
+
+/*45. Solicite tres números al usuario e indique si forman los lados de un triángulo y en
+caso afirmativo qué tipo de triángulo*/
+function triangulo() {
+    let lado1 = parseInt(prompt("Introduce un número"));
+    let lado2 = parseInt(prompt("Introduce un número"));
+    let lado3 = parseInt(prompt("Introduce un número"));
+
+    if (lado1 > 0 && lado2 > 0 && lado3 > 0) {
+        if (lado1 == lado2 && lado2 == lado3)
+            alert("Triangulo equilatero");
+        else if (lado1 != lado2 && lado2 != lado3 && lado1 != lado3)
+            alert("Triangulo escaleno");
+        else
+            alert("Triangulo isosceles");
+    } else
+        alert("No es un triangulo");
+}
+
+/*46. Solicite números al usuario y muestre cuantos números mayores que cero se han
+introducido y la suma de todos ellos. Para terminar, el usuario introducirá el cero*/
+function sumarPositivos() {
+    let numero = 0;
+    let suma = 0;
+    do {
+
+        numero = parseInt(prompt("Introduce un numero"));
+        suma = (numero > 0) ? suma + numero : suma;
+
+    } while (numero != 0);
+
+    alert(suma);
+}
+
+/*47. Calcule el número de años que deben transcurrir para que la suma de las edades de
 tres hijos de 14, 12 y 9 años sea igual a la edad de su padre que ahora tiene 43
-años
-48. Solicite las dimensiones de una matriz, y muestre únicamente aquéllas posiciones
-cuyas coordenadas sean, ambas, impares
-49. Solicite al usuario un PIN (número de cuatro dígitos) y le ofrezca tres oportunidades
-para introducir el mismo que uno elegido por el desarrollador
-50. Solicite el número de horas que se ha trabajado y el número de horas extra y calcule
-la nómina semanal bruta. La hora normal se paga a 10€ y la extra a 15€
-51. Solicite la edad de un padre y la de su hijo y muestre el número de años que deben
-transcurrir hasta que la edad del padre doble a la del hijo
-52. Solicite un número y muestre el triángulo de Pascal de altura igual al número
-introducido
-53. Solicite los coeficientes de una ecuación de primer grado y muestre su solución
+años*/
+function edades() {
+    let annos = 0;
+    let edad = 14 + 12 + 9;
+
+    while (edad <= 43) {
+        edad += 3;
+        annos++;
+    }
+    alert(annos);
+}
+
+/*48. Solicite las dimensiones de una matriz, y muestre únicamente aquéllas posiciones
+cuyas coordenadas sean, ambas, impares*/
+function dimensionMatriz() {
+
+    // No imprime la matriz
+    let fila = parseInt(prompt("Introduce numero de filas"));
+    let columna = parseInt(prompt("Introduce numero de columnas"));
+    let matrix = [fila][columna];
+
+    for (let i = 0; i < fila; i++) {
+        for (let j = 0; j < columna; j++) {
+            if (i % 2 != 0 && j % 2 != 0)
+                matrix[i][j] = 1;
+            else
+                matrix[i][j] = 0;
+        }
+
+    }
+
+    for (let i = 0; i < matrix[i].length; i++) {
+        for (let z = 0; z < matrix.length; z++) {
+            alert(matrix[z][i]);
+        }
+    }
+
+}
+
+/*49. Solicite al usuario un PIN (número de cuatro dígitos) y le ofrezca tres oportunidades
+para introducir el mismo que uno elegido por el desarrollador*/
+function pin() {
+    let pin = 5467;
+    let acierto = false;
+    let numVeces = 0;
+
+    do {
+
+        numVeces++;
+
+        if (pin == parseInt(prompt("Introduce cuatro digitos")))
+            acierto = true;
+
+    } while (numVeces != 3 && acierto != true);
+
+    if (acierto)
+        alert("oleeeeeee");
+    else 
+        alert("Se han acabado las oportunidades")
+}
+
+/*50. Solicite el número de horas que se ha trabajado y el número de horas extra y calcule
+la nómina semanal bruta. La hora normal se paga a 10€ y la extra a 15€*/
+function nomina() {
+    let horas=parseInt(prompt("Introduce las horas trabajadas"));
+    let horasExtra = parseInt(prompt("Introduce las horas extra"));
+
+    alert(horas*10 + horasExtra*15);
+}
+
+/*51. Solicite la edad de un padre y la de su hijo y muestre el número de años que deben
+transcurrir hasta que la edad del padre doble a la del hijo*/
+function doblandoEdad() {
+    let annos = 0;
+    let edadPadre = parseInt(prompt("Introduce la edad del padre"));
+    let edadHijo = parseInt(prompt("Introduce la edad del hijo"));
+
+    do{
+        edadHijo++;
+        edadPadre++;
+        annos++;
+    }while (edadHijo*2 <= edadPadre);
+
+    alert(annos);
+}
+
+/*52. Solicite un número y muestre el triángulo de Pascal de altura igual al número
+introducido*/
+function pascal() {
+    let altura = parseInt(prompt("Introduce la altura del triangulo"));
+    let result = "";
+
+    for (let i = 1; i < altura+1; i++) {
+        result += "*"+ "\n";
+            
+    }
+
+    alert(result );
+}
+
+/*53. Solicite los coeficientes de una ecuación de primer grado y muestre su solución
 54. Solicite los coeficientes de una ecuación de segundo grado y muestre su solución
 55. Solicite al usuario las coordenadas del centro y el radio de dos circunferencias e
 indique si se cortan o no y en cuantos puntos
