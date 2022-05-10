@@ -711,12 +711,12 @@ function edades() {
 cuyas coordenadas sean, ambas, impares*/
 function dimensionMatriz() {
 
-    // No imprime la matriz
     let fila = parseInt(prompt("Introduce numero de filas"));
     let columna = parseInt(prompt("Introduce numero de columnas"));
-    let matrix = [fila][columna];
+    let matrix = [fila];// = [fila][columna];
 
     for (let i = 0; i < fila; i++) {
+        matrix[i] = [columna];
         for (let j = 0; j < columna; j++) {
             if (i % 2 != 0 && j % 2 != 0)
                 matrix[i][j] = 1;
@@ -726,11 +726,15 @@ function dimensionMatriz() {
 
     }
 
-    for (let i = 0; i < matrix[i].length; i++) {
-        for (let z = 0; z < matrix.length; z++) {
-            alert(matrix[z][i]);
+
+    let mensaje = "";
+    for (let i = 0; i < fila; i++) {
+        for (let z = 0; z < columna; z++) {
+            mensaje += matrix[i][z] + " ";
         }
+        mensaje += "\n";
     }
+    alert(mensaje);
 
 }
 
@@ -788,28 +792,123 @@ function pascal() {
     let result = "";
 
     for (let i = 1; i < altura+1; i++) {
-        result += "*"+ "\n";
+        for (let j = 0; j < i; j++) {
+            result += "*";
             
+        }
+         result += "\n";   
     }
 
     alert(result );
 }
 
-/*53. Solicite los coeficientes de una ecuación de primer grado y muestre su solución
-54. Solicite los coeficientes de una ecuación de segundo grado y muestre su solución
-55. Solicite al usuario las coordenadas del centro y el radio de dos circunferencias e
-indique si se cortan o no y en cuantos puntos
-56. Solicite números al usuario entre el 1 y el 100 hasta que se averigüe el que ha
+/*53. Solicite los coeficientes de una ecuación de primer grado y muestre su solución*/
+// ?x = ?
+function ecuacionGrado1() {
+    let num1 = parseInt(prompt("Introduce el numero que acompaña a la incognita"));
+    let num2 = parseInt(prompt("Introduce el numero que no acompaña a la incognita"));
+
+    alert("x = " + num2/num1);
+}
+
+/*54. Solicite los coeficientes de una ecuación de segundo grado y muestre su solución*/
+function ecuacionGrado2() {
+    //x = (-b+-sqrt(bpow2 -4ac))/2a
+    let a = parseInt(prompt("Introduce el numero que acompaña a la incognita al cuadrado"));
+    let b = parseInt(prompt("Introduce el numero que acompaña a la incognita"));
+    let c = parseInt(prompt("Introduce el numero que no acompaña a la incognita"));
+    let resutlado1=(-b+(Math.sqrt(Math.pow(b, 2)- 4* a * c, 2)))/2*a;
+    let resutlado2=(-b-(Math.sqrt(Math.pow(b, 2)- 4* a * c, 2)))/2*a;
+
+    alert("x = " + resutlado1);
+    alert("x = " + resutlado2);
+
+}
+
+/*55. Solicite al usuario las coordenadas del centro y el radio de dos circunferencias e
+indique si se cortan o no y en cuantos puntos*/
+function circunferencias() {
+    let centroX1=parseInt(prompt("Introduce el eje X del centro"));
+    let centroY1=parseInt(prompt("Introduce el eje Y del centro"));
+    let radio1=parseInt(prompt("Introduce el radio"));
+    let centroX2=parseInt(prompt("Introduce el eje X del centro"));
+    let centroY2=parseInt(prompt("Introduce el eje Y del centro"));
+    let radio2=parseInt(prompt("Introduce el radio"));
+    
+    let distanciaCentros = Math.sqrt(Math.pow(Math.abs(centroX1-centroX2), 2) + Math.pow(Math.abs(centroY1-centroY2), 2),2);
+
+    if(centroX1==centroX2 && centroY1==centroY2 && radio1 == radio2){
+        alert("Se trata de la misma circunferencia");
+    }else if(distanciaCentros > radio1+radio2){
+        alert("No se cruzan");
+    }else if(distanciaCentros < Math.abs(radio1-radio2)){
+        alert("No se cruzan");
+    }else 
+        alert("Se cruzan en dos puntos");
+
+}
+
+/*56. Solicite números al usuario entre el 1 y el 100 hasta que se averigüe el que ha
 elegido el desarrollador. Para ayudar al usuario, cada vez que éste introduzca un
 número, se le indicará si el número a averiguar es mayor o menor que el número
 introducido. Intercambiar los papeles y que sea ahora el usuario el que elije un
-número y el programa tratará de adivinarlo
-57. Solicite un número y muestre los dígitos de todos los números desde el 0 hasta el
+número y el programa tratará de adivinarlo*/
+function adivinarNumero() {
+    let numAdivinar = parseInt(Math.random()*100+1);
+    let num = 0;
+    let count = 0;
+
+    do {
+        num = parseInt(prompt("Adivine el numero"));
+
+        if(numAdivinar > num)
+            alert("el número es mayor");
+        else if(numAdivinar < num)
+            alert("el numero es menor");
+
+        count++;
+
+    } while (numAdivinar != num);
+
+    alert("Lo has averiguado en " + count + " intentos.");
+}
+
+function maquina() {
+    let numAdivinar =parseInt(prompt("Adivine el numero")); 
+    let num = 0;
+    let count = 0;
+    let valorMaximo = 101;
+    let valorMinimo = 1;
+
+
+    do {
+        num = parseInt(Math.random()*(valorMaximo-valorMinimo)+valorMinimo);
+
+        if(numAdivinar > num)
+            valorMinimo = num;
+        else if(numAdivinar < num)
+            valorMaximo = num+1;
+
+        count++;
+
+    } while (numAdivinar != num);
+
+    alert("Lo has averiguado en " + count + " intentos.");
+}
+
+/*57. Solicite un número y muestre los dígitos de todos los números desde el 0 hasta el
 solicitado en columnas, por ejemplo, para el número 26:
 000000000011111111112222222
-012345678901234567890123456
+012345678901234567890123456*/
+function digitos(){
+    let numero=parseInt(prompt("Introduce un número"));
+    do {
+        
+    } while (condition);
+}
 
-Cadenas de caracteres
+
+/*Cadenas de caracteres
 1. Solicite el nombre del usuario y le dé las buenas tardes
 2. Muestre los días de la semana (uno por línea)
 3. Solicite un carácter e indique si se trata de una letra, de un número o de otro tipo de
