@@ -902,26 +902,125 @@ solicitado en columnas, por ejemplo, para el número 26:
 012345678901234567890123456*/
 function digitos(){
     let numero=parseInt(prompt("Introduce un número"));
+    let count = 0;
     do {
-        
-    } while (condition);
+        if(numero-count<=10){
+            for (let i = 0; i < numero-count; i++) {
+                alert(i);
+                
+            }
+            count=numero;
+        }else{
+            for (let i = 0; i < 10; i++) {
+                alert(i);
+            }
+            count+=10;
+
+        }
+    } while (count != numero);
 }
 
 
 /*Cadenas de caracteres
-1. Solicite el nombre del usuario y le dé las buenas tardes
-2. Muestre los días de la semana (uno por línea)
-3. Solicite un carácter e indique si se trata de una letra, de un número o de otro tipo de
-carácter
-4. Solicite dos palabras e indique cuál de las dos es más larga y por cuantos caracteres
-lo es
-5. Solicite un número de palabras. A continuación se pedirá al usuario que las
-introduzca. Para terminar se mostrará la palabra más corta y la más larga
-6. Solicite una cadena de caracteres e indique si es un palíndromo o no
-7. Solicite una cadena de caracteres y elimine los espacios innecesarios,es decir,
+1. Solicite el nombre del usuario y le dé las buenas tardes*/
+function buenasTarde() {
+    let nombre = prompt("Introduce tu nombre");
+
+    alert("Buenas tardes " + nombre);
+}
+
+/*2. Muestre los días de la semana (uno por línea)*/
+function diasSemana(){
+    let dias =["lunes","martes","miercoles","jueves","viernes","sabado","domingo"];
+
+    for (let i = 0; i < dias.length; i++) {
+        alert(dias[i]);
+    }
+}
+
+/*3. Solicite un carácter e indique si se trata de una letra, de un número o de otro tipo de
+carácter*/
+function caracter(){
+    let caracter= prompt("Introduce un caracter");
+    caracter = caracter.charAt(0);
+    if(!isNaN(caracter)){
+        alert("Se trata de un numero");
+    }else if(caracter.match(/[a-z]/i)){
+        alert("Es una letra");
+    }else {
+        alert("No es letra ni numero");
+    }
+}
+
+/*4. Solicite dos palabras e indique cuál de las dos es más larga y por cuantos caracteres
+lo es*/
+function palabraMasLarga() {
+    let palabra1 = prompt("Introduce una palabra");
+    let palabra2 = prompt("Introduce otra palabra");
+    let difSize = 0;
+    
+    if(palabra1.length > palabra2.length){
+        difSize = parseInt(palabra1.length - palabra2.length);
+        alert("La primera palabra es más larga. Tiene " + difSize + " caracteres más");
+    }else if(palabra1.length < palabra2.length){
+        difSize = parseInt(palabra2.length - palabra1.length);
+        alert("La segunda palabra es más larga. Tiene " + difSize + " caracteres más");
+    }else{
+        alert("Ambas palabras tienen los mismos caracteres");
+    }
+}
+
+/*5. Solicite un número de palabras. A continuación se pedirá al usuario que las
+introduzca. Para terminar se mostrará la palabra más corta y la más larga*/
+function palabrasVarias() {
+    let numPalabras = parseInt(prompt("Introduce cuantas palabras habrá"));
+    let palabraCorta ="";
+    let palabraLarga ="";
+    let palabra = "";
+
+    for (let i = 0; i < numPalabras; i++) {
+        
+        palabra = prompt("Introduce una palabra");
+
+        if(i==0){
+            palabraCorta = palabra;
+            palabraLarga = palabra;
+        }
+
+        if(palabra.length<palabraCorta.length){
+            palabraCorta = palabra;
+        }else if(palabra.length > palabraLarga.length){
+            palabraLarga=palabra;
+        }
+        
+    }
+
+    alert("La palabra mas larga es " + palabraLarga);
+    alert("La palabra mas corta es " + palabraCorta);
+
+}
+
+/*6. Solicite una cadena de caracteres e indique si es un palíndromo o no*/
+function palindromo(){
+    let palabra = prompt("Introduce una palabra");
+
+    if(palabra.replaceAll(" ","").split('').reverse().join('')==palabra.replaceAll(" ",""))
+        alert("Es un palindromo");
+    else
+        alert("No es un palindromo");
+}
+
+/*7. Solicite una cadena de caracteres y elimine los espacios innecesarios,es decir,
 elimine todos los espacios al comienzo y al final de la cadena y mantenga un único
-espacio entre dos palabras
-8. Solicite al usuario un número y muestre una pirámide de asteriscos cuya base
+espacio entre dos palabras*/
+function quitarCaracter() {
+
+    // NO ESTA ACABADO
+    let palabra = prompt("Introduce una cadena de caracteres");
+    alert(palabra.trim().replaceAll("  ", " "));
+}
+
+/*8. Solicite al usuario un número y muestre una pirámide de asteriscos cuya base
 contenga un número de asteriscos igual al número introducido por el usuario
 9. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
 número 7)
