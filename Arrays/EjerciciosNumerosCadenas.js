@@ -1015,9 +1015,16 @@ elimine todos los espacios al comienzo y al final de la cadena y mantenga un ún
 espacio entre dos palabras*/
 function quitarCaracter() {
 
-    // NO ESTA ACABADO
     let palabra = prompt("Introduce una cadena de caracteres");
-    alert(palabra.trim().replaceAll("  ", " "));
+
+    let porPalabras=palabra.split(" ");
+    for (let i = 0; i < porPalabras.length; i++) {
+        if(porPalabras[i]==""){
+            porPalabras.splice(i,1);
+            i=i-1;
+        }
+    }
+    alert(porPalabras.join(" "));
 }
 
 /*8. Solicite al usuario un número y muestre una pirámide de asteriscos cuya base
