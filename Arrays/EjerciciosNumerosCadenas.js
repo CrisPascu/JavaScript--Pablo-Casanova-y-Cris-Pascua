@@ -1028,8 +1028,12 @@ function quitarCaracter() {
 }
 
 /*8. Solicite al usuario un número y muestre una pirámide de asteriscos cuya base
-contenga un número de asteriscos igual al número introducido por el usuario
-9. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
+contenga un número de asteriscos igual al número introducido por el usuario*/
+function piramideAsteriscosTotal(){
+    let numero=parseInt(prompt("Cuántos asteriscos debe tener la base?"));
+    alert("No sé meter espacios, pasa al siguiente");
+}
+/*9. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
 número 7)
 *
 **
@@ -1038,7 +1042,18 @@ número 7)
 *****
 ******
 *******
-10. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
+*/
+function piramideAsteriscos(){
+    let numero=parseInt(prompt("Cuántos asteriscos debe tener la base?"));
+    for (let i = 0; i < numero+1; i++) {
+        for (let j = 0; j < i; j++) {
+            document.write("*");            
+        }
+        document.write("<br\>");
+    }
+}
+
+/*10. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
 número 7). Tener en cuenta los espacios de la izquierda
  1******
  12*****
