@@ -1027,13 +1027,57 @@ function quitarCaracter() {
     alert(porPalabras.join(" "));
 }
 
-/*8. Solicite al usuario un número y muestre una pirámide de asteriscos cuya base
+/*8. Solicite al usuario un número y muestre una pirámide de asteriscos cuya base 
 contenga un número de asteriscos igual al número introducido por el usuario*/
-function piramideAsteriscosTotal(){
-    let numero=parseInt(prompt("Cuántos asteriscos debe tener la base?"));
-    alert("No sé meter espacios, pasa al siguiente");
+function piramide() {
+    let tamanio = parseInt(prompt("Introduce el tamanio de la piramide"));
+    let espacio = tamanio - 1;
+
+    for (let i = 1; i < tamanio +1; i++) {
+        for (let j = 0; j < espacio; j++) {
+            
+            document.write("-");
+            
+        }
+
+        for (let j = 0; j < i; j++) {
+            document.write("*" + " ");
+            
+        }
+        espacio--;
+        document.write("</br>");
+    }
+
+
 }
-/*9. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
+
+/*8b. Solicite al usuario un número y muestre una pirámide de asteriscos cuya parte alta 
+contenga un número de asteriscos igual al número introducido por el usuario*/
+function piramideInvertida() {
+    let tamanio = parseInt(prompt("Introduce el tamanio de la piramide"));
+    let espacio = 0;
+    let discount = tamanio;
+
+    for (let i = 0; i < tamanio ; i++) {
+        for (let j = 0; j < espacio; j++) {
+            
+            document.write("-");
+            
+        }
+
+        for (let j = discount; j > 0 ; j--) {
+            document.write("*" + " ");
+            
+        }
+        espacio++;
+        discount--;
+        document.write("</br>");
+    }
+
+
+}
+
+/*9. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el 
 número 7)
 *
 **
@@ -1041,19 +1085,21 @@ número 7)
 ****
 *****
 ******
-*******
-*/
-function piramideAsteriscos(){
-    let numero=parseInt(prompt("Cuántos asteriscos debe tener la base?"));
-    for (let i = 0; i < numero+1; i++) {
+*******                */
+function piramideIzquierda() {
+    let asterisco = "*";
+    let altura = parseInt(prompt("Introduce la altura de la piramide"));
+    
+    for (let i = 1; i < altura + 1; i++) {
         for (let j = 0; j < i; j++) {
-            document.write("*");            
+            document.write(asterisco + " ");
         }
-        document.write("<br\>");
+        document.writeln("</br>");
+        
     }
 }
 
-/*10. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el
+/*10. Solicite un número al usuario y muestre una plantilla similar a la siguiente (para el 
 número 7). Tener en cuenta los espacios de la izquierda
  1******
  12*****
@@ -1061,8 +1107,30 @@ número 7). Tener en cuenta los espacios de la izquierda
  1234***
  12345**
  123456*
- 1234567
-11. Solicite un número impar usuario y muestre una plantilla similar a la siguiente (para
+ 1234567        */
+ function plantilla() {
+    let asterisco = "*";
+    let altura = parseInt(prompt("Introduce la altura de la piramide"));
+    let count=1;
+    
+    for (let i = 1; i < altura + 1; i++) {
+
+        for (let j = 0; j < i; j++) {
+            document.write(count);
+            count++;
+            
+        }
+        count = 1;
+
+        for (let j = 0; j < altura - i; j++) {
+            document.write(asterisco);
+        }
+        document.writeln("</br>");
+        
+    }
+ }
+
+/*11. Solicite un número impar usuario y muestre una plantilla similar a la siguiente (para 
 el número 9)
 *
 ***
@@ -1073,8 +1141,35 @@ el número 9)
 *******
 *****
 ***
-*
-12. Solicite un número al usuario y dibuje un hexágono del lado indicado, por ejemplo
+*      */
+function piramideNoSangria() {
+    let tamanio = parseInt(prompt("Introduce el tamanio de la piramide(numero impar)"));
+    let bajada = tamanio;
+
+    if(tamanio%2== 0)
+        document.write("El numero introducido no es un numero impar");
+    else{
+        for (let i = 1; i < tamanio * 2; i++) {
+            if(i <=tamanio){
+                for (let j = 1; j < i+1; j++) {
+                    
+                    document.write("*" + " ");
+                }
+                document.write("</br>");
+            }else{
+                for (let j = bajada; j > 1; j--) {
+                    
+                    document.write("*" + " ");
+                }
+                document.write("</br>");
+                bajada--;
+
+            }
+            
+        }
+    }
+}
+/*12. Solicite un número al usuario y dibuje un hexágono del lado indicado, por ejemplo
 para el número 4:
  ****
  ******
@@ -1082,24 +1177,195 @@ para el número 4:
 **********
 ********
  ******
- ****
-13. Solicite una cadena de caracteres e indique si contiene únicamente mayúsculas,
-únicamente minúsculas, únicamente números o únicamente otros caracteres
-distintos a los mencionados
-14. Solicite al usuario una cadena de caracteres. Si el último carácter de ésta es una
-letra, lo considerará un NIF y le indicará al usuario que tipo de NIF es o si éste es
-inválido. En caso contrario, si es posible, calculará la letra de control y lo mostrará al
-usuario
-15. Solicite al usuario una cadena de caracteres e indique si se trata de un pangrama
-16. Solicite al usuario dos números y una letra: "i” ó "p” (en mayúsculas o minúsculas).
-La página mostrará los números pares (si se pulsó la "p”) ó impares (si se pulsó la
-"i”) que hay desde un número al otro de los que introdujo el usuario
-17. Solicite una cadena y la codifique letra a letra siguiendo el orden alfabético: A->01,
-B->02, C->03, etc.
-18. Permita que dos personas jueguen a piedra, papel, tijera. Se solicitará el número de
-rondas que un jugador debe ganar para ganar el juego. En cada ronda se mostrará
-la puntuación actual
-19. Solicite una dirección MAC-48, la valide y si es correcta la convierta en una dirección
+ *****/
+/*13. Solicite una cadena de caracteres e indique si contiene únicamente mayúsculas, 
+únicamente minúsculas, únicamente números o únicamente otros caracteres 
+distintos a los mencionados*/
+function queSon() {
+    let cadena = prompt("Introduce una cadena");
+
+    if(cadena.match(/[a-z]/)){
+        document.write("Se trata de minusculas");
+    
+    }else if(cadena.match(/[A-Z]/)){
+        document.write("Se trata de mayusculas");
+        
+    }else if(cadena.match(/[0-9]/)){
+        document.write("Se trata de numeros");
+       
+    }else{
+        document.write("Se trata de otra cosa");
+    }
+}
+
+/*14. Solicite al usuario una cadena de caracteres. Si el último carácter de ésta es una 
+letra, lo considerará un NIF y le indicará al usuario que tipo de NIF es o si éste es 
+inválido. En caso contrario, si es posible, calculará la letra de control y lo mostrará al 
+usuario*/
+function dni() {
+    let cadena = prompt("Introduce una cadena de caracteres");
+    let letra = cadena.substring(cadena.length - 1 , cadena.length);
+    let num = cadena.substring(0, cadena.length - 1);
+    let letr = 'TRWAGMYFPDXBNJZSQVHLCKET';
+
+    num = num%23;
+
+    letr = letr.charAt(num);
+    //              /^[0-9]{8}[A-Z]{1}$/
+
+    if(cadena.match(/^\d{8}[A-Z]$/)){
+        document.write("Tiene formato de dni" + "</br>");
+
+
+        if (letra == letr) {
+            document.write("Es un dni valido");
+            
+        } else {
+            document.write("No es un dni valido");
+            
+        }
+
+    }else{
+        document.write("No tiene formato de dni");
+    }
+
+}
+
+/*15. Solicite al usuario una cadena de caracteres e indique si se trata de un pangrama*/
+
+/*16. Solicite al usuario dos números y una letra: "i” ó "p” (en mayúsculas o minúsculas). 
+La página mostrará los números pares (si se pulsó la "p”) ó impares (si se pulsó la 
+"i”) que hay desde un número al otro de los que introdujo el usuario*/
+function paresImpares() {
+    let num1 = parseInt(prompt("Introduce un valor"));
+    let num2 = parseInt(prompt("Introduce un segundo valor"));
+
+    let letra = prompt(`Escribe "p" para hallar los pares o "i" para los impares`);
+
+    //let tipo = (num1%2==0 && num2%2==0)? 1 : (num1%2!=0 && num2%2==0)? 2 :(num1%2==0 && num2%2!=0)? 3 : 4;
+
+    let aux = 0;
+
+    if(num1 > num2){
+        if (letra == "p" || letra == "P") {
+            if(num2%2==0){
+                aux = num2;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num1);
+            }else{
+                aux = num2 + 1;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num1);
+            }
+        } else {
+            if(num2%2==0){
+                aux = num2 +1;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num1);
+            }else{
+                aux = num2 ;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num1);
+            }
+        }
+
+    }else{
+        if (letra == "i" || letra == "I") {
+            if(num1%2!=0){
+                aux = num1;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num2);
+            }else{
+                aux = num2 + 1;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num2);
+            }
+        } else {
+            if(num1%2==0){
+                aux = num1;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num2);
+            }else{
+                aux = num1 + 1;
+                do {
+                    document.write(aux + " ");
+                    aux += 2;
+                } while (aux<=num2);
+            }
+        }
+    }
+
+}
+/*17. Solicite una cadena y la codifique letra a letra siguiendo el orden alfabético: A->01,
+B->02, C->03, etc.*/
+
+/*18. Permita que dos personas jueguen a piedra, papel, tijera. Se solicitará el número de 
+rondas que un jugador debe ganar para ganar el juego. En cada ronda se mostrará 
+la puntuación actual*/
+function piedraPapelTijera() {
+    let rondas = parseInt(prompt("Introduce numero de rondas"));
+    let count = 0;
+    let pc = 0;
+    let humano = 0;
+    let ganador = false;
+
+    let jugadaPc = 0;
+    let jugadaHumano = 0;
+
+    do {
+
+        do {
+
+            jugadaHumano = parseInt(prompt("1 es piedra, 2 es papel y 3 es tijera"));
+            jugadaPc = parseInt(Math.random()*3+1);
+
+            if (jugadaHumano == 3 && jugadaPc == 2 || jugadaHumano == 1 && jugadaPc == 3 || jugadaHumano == 2 && jugadaPc == 1){
+                humano++;
+                ganador = true;
+                alert("Gana humano");
+            }else if (jugadaPc == 3 && jugadaHumano == 2 || jugadaPc == 1 && jugadaHumano == 3 || jugadaPc == 2 && jugadaHumano == 1){
+                pc++;
+                ganador = true;
+                alert("Gana PC");
+
+            }else{
+                alert("Empate");
+
+            }
+            
+        } while (ganador!=true);
+
+        ganador = false;
+        count++;
+        mostrarPuntuacion(pc, humano, rondas, count);
+        
+    } while (count != rondas);
+}
+
+function mostrarPuntuacion(pc, humano, rondas, count) {
+    
+    if(rondas == count)
+        alert("--- FINAL SCORE ---"+ "\nPC: " + pc + "\nHumano: " + humano);
+    else
+        alert("--- SCORE ---" + "\nPC: " + pc + "\nHumano: " + humano);
+
+
+}
+/*19. Solicite una dirección MAC-48, la valide y si es correcta la convierta en una dirección
 IPv6 de enlace local
 20. Solicite una cadena y la cifre utilizando el método ROT13
 21. Solicite una cadena y la codifique utilizando el método Base64
@@ -1109,3 +1375,10 @@ XXL, XL, L Grande
 M Mediana
 XS, S Pequeña
 */
+function tallaje() {
+    let talla = prompt("Introduce tu talla de ropa");
+
+    let opcion = (talla == "XS" || talla == "S") ? "Pequenia" : (talla == "M") ? "Mediana" : "Grande";
+
+    alert(opcion);
+}
