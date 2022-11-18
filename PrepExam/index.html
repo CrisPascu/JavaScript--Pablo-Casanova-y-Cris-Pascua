@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="stylesheet" href="css/styles.csss">
+    <title>Calcular fecha</title>
+</head>
+<body>
+    <h1>Calculadora Fechas</h1>
+    <form method="" action="">
+        <label for="inicio">Fecha de comienzo: </label>
+        <input type="date" id="inicio">
+        <button type="button" id="hoyComienzo">Hoy</button> <br><br>
+
+        <label for="fin">Fecha fin: </label>
+        <input type="date" id="fin">
+        <button type="button" id="hoyFin">Hoy</button> <br><br>
+
+        <label for="numDias">Numero de dias: </label>
+        <input type="number" id="numDias"><br><br>
+
+        <label for="diasHabiles">
+            <input type="checkbox" id="diasHabiles">
+            Dias habiles
+        </label>
+        <button type="button" id="contar">contar dias</button>
+        <button type="button" id="sumar">sumar dias</button>
+    </form>
+
+    <script src="js/funciones.js"></script>
+</body>
+</html>
