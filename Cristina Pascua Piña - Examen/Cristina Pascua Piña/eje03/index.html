@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link href="css/form.css" rel="stylesheet" />
+    
+  </head>
+  <body>
+    <div>
+        <h1 class="center">Hogar Mediterraneo</h1> 
+
+    <form action="">
+     <fieldset>
+      <legend><strong>  Datos Personales</strong> </legend>
+     
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required/>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" required/><br />
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni" required/><br />
+        <p>Sexo</p>
+        <input type="radio" id="m" name="sexo" value="Másculino" checked>
+        <label for="m">Másculino</label>
+        <input type="radio" id="f" name="sexo" value="Femenino">
+        <label for="f">Femenino</label>
+        <br /> 
+        <label for="edad">Edad<input  id="edad" type="number" name="edad" value="" required></label>
+      </fieldset>
+      <br /> <br />
+      <fieldset>
+        <legend><strong>IMC</strong> </legend>
+      
+        <label for="peso">Peso</label>
+        <input type="number" maxlength="255" name="peso" id="peso" required/>
+        <label for="altura">Altura</label>
+        <input type="decimal" maxlength="255" name="altura" id="altura" required/>
+      <br />
+        </fieldset>
+      <input type="submit" id="enviar" value="Enviar">
+    </form>
+    <p id="resultado"></p>
+</div>
+  <script src="js/funciones.js"></script>
+
+  </body>
+</html> 
