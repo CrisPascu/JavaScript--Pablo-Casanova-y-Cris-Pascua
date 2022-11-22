@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Paciente</title>
+  <link href="css/form.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div>
+    <h1 class="center">Hogar Mediterraneo</h1>
+
+    <form action="">
+      <fieldset>
+        <legend><strong> Datos Personales</strong> </legend>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required maxlength="20" />
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" required maxlength="20" /><br />
+        <label for="edad">Edad</label>
+        <input type="number" name="edad" id="edad" required/><br />
+        <label for="dni">DNI</label>
+        <input type="text" name="dni" id="dni" required/><br />
+        <p>Sexo</p>
+        <input type="radio" id="m" name="sexo" value="Másculino" required>
+        <label for="m">Másculino</label>
+        <input type="radio" id="f" name="sexo" value="Femenino" required>
+        <label for="f">Femenino</label>
+        <br />
+      </fieldset>
+      <br /> <br />
+      <fieldset>
+        <legend><strong>IMC</strong> </legend>
+
+        <label for="peso">Peso</label>
+        <input type="number" maxlength="255" name="peso" id="peso" required min="15" max="600"/>
+        <label for="altura">Altura</label>
+        <input type="number" maxlength="255" name="altura" id="altura" required min="0,5" max="2,5"/>
+        <br />
+        <p id="imc"></p>
+      </fieldset>
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+
+</html>
