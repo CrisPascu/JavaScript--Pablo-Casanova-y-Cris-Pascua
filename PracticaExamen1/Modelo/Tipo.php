@@ -15,7 +15,7 @@
             $modelo = new ModeloTipo();
             $ayuda = $modelo->select($this->codigo);
 
-            $this->getNombreTipo($ayuda[0]->getNombreTipo());
+            $this->setNombreTipo($ayuda[0]->getNombreTipo());
             return $this;
         }
 

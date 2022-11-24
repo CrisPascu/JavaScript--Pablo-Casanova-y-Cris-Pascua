@@ -2,7 +2,7 @@
     class Validacion{
         private $patron;
         private $funcion;
-        private $mensaje = array();
+        public $mensaje = Array();
 
         function __construct(){
             $this->patron = array(
@@ -10,12 +10,11 @@
                 "nombre"=> array("patron"=>"/^[a-z]$/i", "mensaje"=>"El nombre no es válido"),
                 "apellido"=> array("patron"=>"/^[a-z]$/i", "mensaje"=>"El apellido no es válido"),
                 "correo"=> array("patron"=>"/^[a-z]+@[a-z]+\.[a-z]{2,3}$/", "mensaje"=>"El correo no es válido"),
-                "edad"=> array("patron"=>"/^[\d]{1,2}$/", "mensaje"=>"La edad no es válido"),
-                "password"=> array("patron"=>"", "mensaje"=>"La contraseña no es válido")
+                "edad"=> array("patron"=>"/^[\d]{1,2}$/", "mensaje"=>"La edad no es válido")
             );
             $this->funcion = array(
                 "contra2" => array("funcion"=>"comprobarContrasenia", "mensaje"=>"Las contraseñas no coinciden"),
-                "nivel"=> array("funcion"=>"", "obligatorio"=>"El campo es obligatorio")
+                "nivel"=> array("funcion"=>"obligatorio", "mensaje"=>"El campo es obligatorio")
             );
         }
 
@@ -37,12 +36,12 @@
                     }
                 }
             } 
-            return ($this->mensaje);
+            return $this->mensaje;
         }
 
         public function obligatorio($campo, $aux=null){
             if (is_array($campo)){//es el tipo check
-                return (count($campo)<2);
+                return (count($campo)<1);
             }else{
                 return empty($campo);
             }

@@ -1,8 +1,8 @@
 <?php
     require_once("Control/Controlador.php");
     $metodo = $_SERVER["REQUEST_METHOD"];
-    //esto es para comprobar si existe y mostrar la foto y eso
-    if($metodo == "GET"){
+    //esto es para comprobar si existe y mostrar la foto
+      if($metodo == "GET"){
         Controlador::pintarFormLogin();
     } else if($metodo == "POST"){
         if(Controlador::comprobar()){
@@ -18,14 +18,15 @@
         }
     }
     
-    /*
+  
     //Esto es para insertar un usuario pero no he probado el validar
-    if($metodo == "POST"){
+    /*if($metodo == "POST"){
         if(!empty($_POST)){
-            if(Controlador::validar($_POST)){
+            $mensaje=Controlador::validarUsuario($_POST);
+            if(count($mensaje)==0){
                 Controlador::insertarUsuario();
-            }
+            }            
         }
     } else{
-        Controlador::pintarFormUsuario();
+        Controlador::pintarFormInsertar();
     }*/

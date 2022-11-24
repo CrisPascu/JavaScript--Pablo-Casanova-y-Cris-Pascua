@@ -2,6 +2,7 @@
     require_once("Modelo/ModeloTipo.php");
     require_once("Modelo/Usuario.php");
     require_once("Modelo/Tipo.php");
+    require_once("Validacion.php");
     class Controlador{
 
         static function validarUsuario(&$datosUsuario){
@@ -10,6 +11,7 @@
 
             if(count($valido->mensaje)>0){
                 echo "Datos inválidos";
+                var_dump($valido->mensaje);
             }else{
                 foreach ($datosUsuario as $key => $value) {
                     $datosUsuario[$key]=filter_var($value, FILTER_SANITIZE_STRING);

@@ -10,7 +10,7 @@
             $this->conexion = Conexion::conectar();
         }
 
-        public function select($codigo=null){
+        public function select($codigo = null){
             $listadoTipos = array();
             $i = 0;
             if(is_null($codigo)){
@@ -28,7 +28,7 @@
             while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) {
                 $listadoTipos[$i++] = new Tipo($row["codigo"], $row["nombreTipo"]);
             }
-
+            
             return $listadoTipos;
         }
     }
