@@ -1,0 +1,1 @@
+//Esta vista muestra información del usuario logado y las opciones de Menu
